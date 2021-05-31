@@ -1,0 +1,188 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Rating Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Restaurant Rating Prediction</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Ratings(out of 5)</h5>
+                            <p>Online Table Booking</p>
+                            <input type="radio" id="yes" name="online_table" value="yes">
+                            <label for="yes">Yes</label><br>
+                            <input type="radio" id="no" name="online_table" value="no">
+                            <label for="no">No</label><br>
+
+                            <p>Online Delivery</p>
+                            <input type="radio" id="y" name="online_delivery" value="yes">
+                            <label for="y">Yes</label><br>
+                            <input type="radio" id="n" name="online_delivery" value="no">
+                            <label for="n">No</label><br>
+
+                            <p>Delivering Now?</p>
+                            <input type="radio" id="delivery_yes" name="online_active" value="yes">
+                            <label for="delivery_yes">Yes</label><br>
+                            <input type="radio" id="delivery_no" name="online_active" value="no">
+                            <label for="delivery_no">No</label><br>
+
+                            <p>Price Range</p>
+                            <input type="number" id="range" name="range">
+
+                            <p>Votes</p>
+                            <input type="number" id="votes" name="votes">
+
+                            <p>Avg cost for two</p>
+                            <input type="number" id="avg" name="avg">
+
+                            <h5 class="card-title">City</h5>
+                            <!-- Destination -->
+                            <select name="City" id="city" required="required">
+                                <option value="New Delhi">New Delhi</option>
+                                <option value="Gurgaon">Gurgaon</option>
+                                <option value="Noida">Noida</option>
+                                <option value="Faridabad">Faridabad</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Cuisines</h5>
+                            <input type="checkbox" id="Bakery" name="cusines" value="Bakery">
+                            <label for="Bakery"> Bakery</label><br>
+                            <input type="checkbox" id="Seafood" name="cusines" value="Seafood">
+                            <label for="Seafood">Seafood</label><br>
+                            <input type="checkbox" id="European" name="cusines" value="European">
+                            <label for="European">European</label><br>
+
+                            <input type="checkbox" id="Continental" name="cusines" value="Continental">
+                            <label for="Continental"> Continental</label><br>
+                            <input type="checkbox" id="Asian" name="cusines" value="Asian">
+                            <label for="Asian">Asian</label><br>
+                            <input type="checkbox" id="Chinese" name="cusines" value="Chinese">
+                            <label for="Chinese">Chinese</label><br>
+
+                            <input type="checkbox" id="North Indian" name="cusines" value="North Indian">
+                            <label for="North Indian"> North Indian</label><br>
+                            <input type="checkbox" id="Cafe" name="cusines" value="Cafe">
+                            <label for="Cafe">Cafe</label><br>
+                            <input type="checkbox" id="Italian" name="cusines" value="Italian">
+                            <label for="Italian">Italian</label><br>
+
+                            <input type="checkbox" id="Desserts" name="cusines" value="Desserts">
+                            <label for="Desserts">Desserts</label><br>
+                            <input type="checkbox" id="Thai" name="cusines" value="Thai">
+                            <label for="Thai">Thai</label><br>
+                            <input type="checkbox" id="Mughlai" name="cusines" value="Mughlai">
+                            <label for="Mughlai">Mughlai</label><br>
+
+                            <input type="checkbox" id="Mexican" name="cusines" value="Mexican">
+                            <label for="Mexican">Mexican</label><br>
+                            <input type="checkbox" id="American" name="cusines" value="American">
+                            <label for="American">American</label><br>
+                            <input type="checkbox" id="Fast Food" name="cusines" value="Fast Food">
+                            <label for="Fast Food">Fast Food</label><br>
+
+                            <input type="checkbox" id="South Indian" name="cusines" value="South Indian">
+                            <label for="South Indian">South Indian</label><br>
+                            <input type="checkbox" id="Street Food" name="cusines" value="Street Food">
+                            <label for="Street Food">Street Food</label><br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_texts }}</h3>
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

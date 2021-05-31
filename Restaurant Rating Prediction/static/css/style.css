@@ -1,0 +1,19 @@
+body {
+  background-image:url({{ url_for ('static', filename = '/static/cafe.jpg') }});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+.navbar {
+    background-color: #333333;
+}
+
+a {
+    color: #f1f9f9;
+}
+
+a:hover {
+    color: #f0f0f0;
+  }
