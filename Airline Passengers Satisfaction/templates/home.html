@@ -1,0 +1,154 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">FLIGHT PRICE</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Ratings(out of 5)</h5>
+                            <p>Online Boarding</p>
+                            <input type="number" id="online" name="online" value="online">
+                            <p>Inflight Wifi</p>
+                            <input type="number" id="wifi" name="wifi" value="wifi">
+                            <p>Inflight Entertainment</p>
+                            <input type="number" id="Entertainment" name="Entertainment" value="Entertainment">
+                            <p>Seat Comfort</p>
+                            <input type="number" id="seat" name="seat" value="seat">
+                            <p>Checkin Service</p>
+                            <input type="number" id="checkin" name="checkin" value="checkin">
+                            <p>Baggage Handling</p>
+                            <input type="number" id="baggage" name="baggage" value="baggage">
+                            <p>Ease of Online Booking</p>
+                            <input type="number" id="online_book" name="online_book" value="online_book">
+                            <p>Onboard Service</p>
+                            <input type="number" id="onboard_service" name="onboard_service" value="onboard_service">
+                            <p>Inflight Service</p>
+                            <input type="number" id="inflight_service" name="inflight_service" value="inflight_service">
+                            <p>Cleanliness</p>
+                            <input type="number" id="cleanliness" name="cleanliness" value="cleanliness">
+                            <p>Leg room service</p>
+                            <input type="number" id="leg_room" name="leg_room" value="leg_room">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Type of Travel</h5>
+                            <!-- Destination -->
+                            <select name="travel_type" id="travel_type" required="required">
+                                <option value="Business">Business</option>
+                                <option value="Personal">Personal</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <h5 class="card-title">Customer Class</h5>
+                            <!-- Destination -->
+                            <select name="class_travel" id="class_travel" required="required">
+                                <option value="Business">Business</option>
+                                <option value="Eco_Plus">Eco Plus</option>
+                                <option value="Eco">Eco</option>
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <h5 class="card-title">Customer Type</h5>
+                            <!-- Destination -->
+                            <select name="cust_type" id="cust_type" required="required">
+                                <option value="loyal">Loyal</option>
+                                <option value="disloyal">Disloyal</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+        <p>©2020 Amar Mandal</p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
